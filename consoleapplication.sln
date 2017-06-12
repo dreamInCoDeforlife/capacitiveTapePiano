@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO.Ports;
+using System.Media;
+
+
+namespace ConsoleApplication4
+{
+
+        
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SerialPort myport = new SerialPort();
+            myport.BaudRate = 9600;
+            myport.PortName = "COM5";
+            myport.Open();
+            Boolean a = true;
+            while (a==true)
+            {
+                string data_rx = myport.ReadLine();
+                int number;
+                Int32.TryParse(data_rx, out number);
+                Console.WriteLine(number);
+                
+                var myPlayer = new System.Media.SoundPlayer();
+               /*
+                if (number > 200 && number < 300)
+                {
+                    myPlayer.SoundLocation = @"C:\Users\Aman\Documents\arduino Project\c.wav";
+                    myPlayer.Play();
+                    Console.WriteLine("yep2");
+                }else if (number < 200 && number > 135)
+                {
+                    myPlayer.SoundLocation = @"C:\Users\Aman\Documents\arduino Project\d.wav";
+                    myPlayer.Play();
+                    Console.WriteLine("yep3");
+
+                }
+                else if (number <135  && number > 100)
+                {
+                    myPlayer.SoundLocation = @"C:\Users\Aman\Documents\arduino Project\e.wav";
+                    myPlayer.Play();
+                    Console.WriteLine("yep3");
+
+                }
+                else if (number > 85 && number < 100)
+                {
+                    myPlayer.SoundLocation = @"C:\Users\Aman\Documents\arduino Project\f.wav";
+                    myPlayer.Play();
+                    Console.WriteLine("yep4");
+
+                }
+                else if (number >75 && number < 95)
+                {
+                    
+                    myPlayer.SoundLocation = @"C:\Users\Aman\Documents\arduino Project\g.wav";
+                    myPlayer.Play();
+                    Console.WriteLine("yep5");
+                    //dfef9isdi sfi0e9ifaosdfi 0e9if adfdosif sif9ie9i9s
+                }
+                */
+                  if (number < 250 && number <= 320)
+                {
+                     myPlayer.SoundLocation = @"C: \Users\Aman\Downloads\hello.wav";
+                    //myPlayer.SoundLocation = @"C:\Users\Aman\Documents\arduino Project\bass.wav";
+                    myPlayer.Play();
+
+                
+                }
+                /*
+                else if (number < 50 && number >=0)
+                {
+                    myPlayer.SoundLocation = @"C:\Users\Aman\Documents\arduino Project\bass.wav";
+                    myPlayer.Play();
+                }
+
+                */
+
+
+
+                  
+            }
+        }
+
+        
+    }
+}
